@@ -146,7 +146,7 @@ export default function HomePage() {
   return (
     <div>
       <div
-        className="flex flex-row justify-evenly items-center h-screen bg-secondary"
+        className="flex flex-row justify-evenly items-center h-screen "
         style={
           {
             // backgroundImage: `url('https://images.hdqwalls.com/download/neon-city-buildings-4k-on-2048x1152.jpg')`,
@@ -160,7 +160,7 @@ export default function HomePage() {
             initial="hidden"
             animate="show"
             variants={headerVariants}
-            className="text-4xl font-bold text-white"
+            className="text-4xl font-bold "
             whileHover={{
               textShadow: "0px 0px 8px #FF7F11",
             }}
@@ -184,25 +184,7 @@ export default function HomePage() {
           <Lottie animationData={animationData} />
         </motion.div>
       </div>
-      <div className="flex flex-col justify-center items-center h-screen ">
-        <h1 className="text-2xl font-bold">Our Services</h1>
-        <h2 className="text-4xl font-bold my-10">Choose your package</h2>
-        <div className="flex justify-start items-center m-6 gap-3 h-full w-full p-4 overflow-hidden">
-          {/* <h1 className="text-4xl font-bold">SEO </h1>
-          <h1 className="text-4xl font-bold">Social Media Marketing</h1>
-          <h1 className="text-4xl font-bold">Web Design</h1>
-          <h1 className="text-4xl font-bold">Mobile Design </h1> */}
 
-          {packages.map((item, index) => (
-            <ServicePack
-              name={item.name}
-              description={item.description}
-              img={item.img}
-              key={index}
-            />
-          ))}
-        </div>
-      </div>
       <div className="flex flex-col justify-center items-center h-screen bg-secondary">
         <h1 className="text-4xl font-bold text-white">About US </h1>
         <div className="flex items-center h-full">
@@ -233,9 +215,27 @@ export default function HomePage() {
           </motion.div>
         </div>
       </div>
+      <div className="flex flex-col justify-center items-center h-screen  ">
+        <h1 className="text-2xl font-bold">Our Services</h1>
+        <h2 className="text-4xl font-bold my-10">Choose your package</h2>
+        <div className="flex justify-start items-center m-6 gap-3 h-full w-full p-4 overflow-hidden">
+          {/* <h1 className="text-4xl font-bold">SEO </h1>
+          <h1 className="text-4xl font-bold">Social Media Marketing</h1>
+          <h1 className="text-4xl font-bold">Web Design</h1>
+          <h1 className="text-4xl font-bold">Mobile Design </h1> */}
 
-      <div className="flex flex-col justify-center items-center h-screen ">
-        <h1 className="text-4xl font-bold">Testimonials</h1>
+          {packages.map((item, index) => (
+            <ServicePack
+              name={item.name}
+              description={item.description}
+              img={item.img}
+              key={index}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center h-screen bg-secondary">
+        <h1 className="text-4xl font-bold text-white">Testimonials</h1>
         <div className="flex h-full items-center justify-center w-full">
           <Carousel
             opts={{
@@ -273,6 +273,63 @@ export default function HomePage() {
             <CarouselNext />
           </Carousel>
         </div>
+      </div>
+      <div className="bg-gray-100 p-6 rounded-md shadow-md h-screen">
+        <h2 className="text-2xl font-bold mb-5 text-center">Contact Us</h2>
+        <form>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Name:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="phone"
+            >
+              Phone Number:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+            />
+          </div>
+          <div>
+            <input
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+              value="Submit"
+            />
+          </div>
+        </form>
       </div>
       <footer className="flex flex-col justify-center items-end p-4 bg-secondary text-white ">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
