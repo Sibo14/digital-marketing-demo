@@ -13,8 +13,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/Carousel";
-import { Card, CardContent } from "@/components/ui/card";
 import profilepic from "../images/profilepic.jpg";
+import { Card, CardContent } from "@/components/ui/Card";
+import { InfiniteMovingCards } from "../../components/ui/infinite-moving-cards";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { LampContainer } from "@/components/ui/lamp";
 
 interface Package {
   name: string;
@@ -112,9 +115,41 @@ export default function HomePage() {
       damping: 10,
       opacity: 1,
       y: 0,
-      delay: 5.5,
+      delay: 8,
     },
   };
+
+  const testimonialCard = [
+    {
+      quote:
+        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      name: "Charles Dickens",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+      name: "William Shakespeare",
+      title: "Hamlet",
+    },
+    {
+      quote: "All that we see or seem is but a dream within a dream.",
+      name: "Edgar Allan Poe",
+      title: "A Dream Within a Dream",
+    },
+    {
+      quote:
+        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      name: "Jane Austen",
+      title: "Pride and Prejudice",
+    },
+    {
+      quote:
+        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+      name: "Herman Melville",
+      title: "Moby-Dick",
+    },
+  ];
 
   const mainControls = useAnimation();
   useEffect(() => {
@@ -125,7 +160,7 @@ export default function HomePage() {
 
   const ServicePack = ({ name, description, img }: Package) => (
     <motion.div
-      className="flex flex-col h-full w-1/3 items-center justify-center "
+      className="flex flex-col h-full w-1/3 items-center justify-center bg-white rounded-lg shadow-md p-4"
       whileHover={{ scale: 1.1, cursor: "pointer" }}
     >
       <div className="flex-1 flex items-center justify-center rounded-full overflow-hidden">
@@ -136,7 +171,7 @@ export default function HomePage() {
           whileHover={{
             color: "#FF7F11",
           }}
-          className="text-4xl font-bold gap-3 mt-4"
+          className="text-4xl font-bold gap-3 mt-4 "
         >
           {name}
         </motion.h1>
@@ -144,7 +179,7 @@ export default function HomePage() {
     </motion.div>
   );
   return (
-    <div>
+    <div className="bg-secondary">
       <div
         className="flex flex-row justify-evenly items-center h-screen "
         style={
@@ -160,7 +195,7 @@ export default function HomePage() {
             initial="hidden"
             animate="show"
             variants={headerVariants}
-            className="text-4xl font-bold "
+            className="text-4xl font-bold text-white "
             whileHover={{
               textShadow: "0px 0px 8px #FF7F11",
             }}
@@ -174,10 +209,11 @@ export default function HomePage() {
             className="m-3 flex justify-center items-center"
             whileHover={{ scale: 1.1 }}
           >
-            <Button size={"lg"} className="bg-primary">
+            <Button size={"lg"} className="bg-primary rounded-full">
               Get Quote
             </Button>
           </motion.div>
+          {/* <BackgroundBeams /> */}
         </div>
 
         <motion.div initial="hidden" animate="show" variants={lottieVariants}>
@@ -185,26 +221,17 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col justify-center items-center h-screen bg-secondary">
-        <h1 className="text-4xl font-bold text-white">About US </h1>
-        <div className="flex items-center h-full">
+      <div className="flex flex-col justify-center items-center h-screen">
+        <LampContainer>
+          <h1 className="text-4xl font-bold text-white">About US </h1>
           <motion.div
-            className="flex flex-col h-full w-full  items-center justify-center p-3 "
+            className="flex w-1/2 items-center p-3"
             initial="hidden"
             animate={mainControls}
             variants={aboutVariants}
             ref={ref}
           >
-            <Lottie animationData={aboutLottie} className="h-96" />
-          </motion.div>
-          <motion.div
-            className="flex w-full  p-3"
-            initial="hidden"
-            animate={mainControls}
-            variants={aboutVariants}
-            ref={ref}
-          >
-            <p className="justify-center text-white">
+            <p className="text-white text-xl">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -213,11 +240,25 @@ export default function HomePage() {
               nulla pariatur.
             </p>
           </motion.div>
-        </div>
+          {/* <div className="flex items-center">
+            <motion.div
+              className="flex flex-col h-full w-full  items-center justify-center p-3 "
+              initial="hidden"
+              animate={mainControls}
+              variants={aboutVariants}
+              ref={ref}
+            >
+              <Lottie animationData={aboutLottie} className="h-96" />
+            </motion.div>
+            
+          </div> */}
+        </LampContainer>
       </div>
       <div className="flex flex-col justify-center items-center h-screen  ">
-        <h1 className="text-2xl font-bold">Our Services</h1>
-        <h2 className="text-4xl font-bold my-10">Choose your package</h2>
+        <h1 className="text-2xl font-bold text-white">Our Services</h1>
+        <h2 className="text-4xl font-bold my-10 text-white">
+          Choose your package
+        </h2>
         <div className="flex justify-start items-center m-6 gap-3 h-full w-full p-4 overflow-hidden">
           {/* <h1 className="text-4xl font-bold">SEO </h1>
           <h1 className="text-4xl font-bold">Social Media Marketing</h1>
@@ -237,7 +278,16 @@ export default function HomePage() {
       <div className="flex flex-col justify-center items-center h-screen bg-secondary">
         <h1 className="text-4xl font-bold text-white">Testimonials</h1>
         <div className="flex h-full items-center justify-center w-full">
-          <Carousel
+          {/* <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden"> */}
+          <InfiniteMovingCards
+            items={testimonialCard}
+            direction="right"
+            speed="slow"
+            className="w-full "
+          />
+          {/* </div> */}
+
+          {/* <Carousel
             opts={{
               align: "start",
             }}
@@ -271,21 +321,23 @@ export default function HomePage() {
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
-          </Carousel>
+          </Carousel> */}
         </div>
       </div>
-      <div className="bg-gray-100 p-6 rounded-md shadow-md h-screen">
-        <h2 className="text-2xl font-bold mb-5 text-center">Contact Us</h2>
+      <div className=" p-6 rounded-md shadow-md h-screen">
+        <h2 className="text-2xl font-bold mb-5 text-center text-white">
+          Contact Us
+        </h2>
         <form>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-white text-sm font-bold mb-2"
               htmlFor="name"
             >
               Name:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="name"
               name="name"
@@ -294,13 +346,13 @@ export default function HomePage() {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-white text-sm font-bold mb-2"
               htmlFor="email"
             >
               Email:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               id="email"
               name="email"
@@ -309,13 +361,13 @@ export default function HomePage() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-white text-sm font-bold mb-2"
               htmlFor="phone"
             >
               Phone Number:
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               type="tel"
               id="phone"
               name="phone"
@@ -331,10 +383,10 @@ export default function HomePage() {
           </div>
         </form>
       </div>
-      <footer className="flex flex-col justify-center items-end p-4 bg-secondary text-white ">
+      <footer className="flex flex-col justify-center items-end p-4 bg-white  ">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <div>
-            <h1 className="font-bold text-2xl mb-2">Company Name</h1>
+            <h1 className="font-bold text-2xl mb-2 ">Company Name</h1>
             <p>1234 Street Name</p>
             <p>City, State, Zip</p>
           </div>
