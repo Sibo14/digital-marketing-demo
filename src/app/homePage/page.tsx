@@ -8,7 +8,7 @@ import { InfiniteMovingCards } from "../../components/ui/infinite-moving-cards";
 import animationData from "../images/lottifilesanimation.json";
 import { Reveal } from "@/components/Reveal";
 import { Search, MessageCircleMore, Globe, Smartphone } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../../components/ui/button";
 
 interface Package {
   name: string;
