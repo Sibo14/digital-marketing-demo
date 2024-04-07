@@ -157,10 +157,10 @@ export default function HomePage() {
               variants={headerVariants}
               className="flex flex-col items-center gap-4 "
             >
-              <h1 className="text-4xl font-bold text-white ">
+              <h1 className="text-2xl font-bold text-white text-center md:text-4xl  md:block hidden">
                 Digital Marketing
               </h1>
-              <p className="gap-3 text-white text-2xl ">
+              <p className="text-white text-lg md:text-2xl text-justify p-4 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -195,9 +195,11 @@ export default function HomePage() {
         <div className="flex flex-col justify-center items-center h-screen">
           <div>
             <LampContainer>
-              <h1 className="text-4xl font-bold text-white">About Us </h1>
-              <div className="flex w-1/2 items-center p-3">
-                <p className="text-white text-xl">
+              <h1 className="text-2xl font-bold text-white md:text-4xl">
+                About Us{" "}
+              </h1>
+              <div className="flex w-full items-center p-3 md:w-1/2">
+                <p className="text-white text-sm md:text-xl">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -211,10 +213,12 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col  items-center h-screen justify-center  ">
           <Reveal>
-            <div className="flex flex-col justify-center items-center w-full ">
-              <h1 className="text-4xl font-bold text-white">Our Services</h1>
+            <div className="flex flex-col justify-center items-center w-full  ">
+              <h1 className="text-2xl md:text-4xl font-bold text-white">
+                Our Services
+              </h1>
               <div
-                className="flex justify-center items-center m-6 gap-3 h-1/2 w-full  overflow-hidden "
+                className="flex flex-col md:flex-row justify-start items-center gap-3 md:w-full py-2 overflow-auto "
                 style={{ height: 600 }}
               >
                 {packages.map((item, index) => (
@@ -231,7 +235,9 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col justify-evenly items-center h-screen overflow-hidden ">
           <Reveal>
-            <h1 className="text-4xl font-bold text-white">Testimonials</h1>
+            <h1 className="text-2xl md:text-4xl font-bold text-white">
+              Testimonials
+            </h1>
           </Reveal>
           <Reveal>
             <div className="flex flex-col justify-center w-full h-full ">
@@ -246,7 +252,7 @@ export default function HomePage() {
           </Reveal>
         </div>
         <div className="flex justify-center p-6 rounded-md shadow-md h-screen w-full">
-          <div className=" w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-2xl font-bold mb-5 text-center text-white">
               Contact Us
             </h2>
