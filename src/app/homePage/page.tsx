@@ -8,11 +8,12 @@ import { useEffect, useRef } from "react";
 import { InfiniteMovingCards } from "../../components/ui/infinite-moving-cards";
 import animationData from "../images/lottifilesanimation.json";
 import { Reveal } from "@/components/Reveal";
+import { Search, MessageCircleMore, Globe, Smartphone } from "lucide-react";
 
 interface Package {
   name: string;
   description: string;
-  img: string;
+  img: any;
 }
 interface Testimonial {
   name: string;
@@ -25,23 +26,27 @@ export default function HomePage() {
   const packages: Package[] = [
     {
       name: "SEO",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      img: require("../images/search.png"),
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      img: <Search className="text-primary" />,
     },
     {
       name: "Social Media Marketing",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      img: require("../images/social.png"),
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      img: <MessageCircleMore className="text-primary" />,
     },
     {
       name: "Web",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      img: require("../images/web.png"),
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      img: <Globe className="text-primary" />,
     },
     {
       name: "Mobile",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      img: require("../images/mobile.png"),
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      img: <Smartphone className="text-primary" />,
     },
   ];
 
@@ -132,24 +137,15 @@ export default function HomePage() {
   }, [isInView, mainControls]);
 
   const ServicePack = ({ name, description, img }: Package) => (
-    <motion.div
-      className="flex flex-col h-full w-1/3 items-center justify-center bg-white rounded-lg shadow-md p-4"
-      whileHover={{ scale: 1.1, cursor: "pointer" }}
-    >
-      <div className="flex-1 flex items-center justify-center rounded-full overflow-hidden">
-        <Image src={img} alt="/" objectFit="cover" />
+    <div className="flex flex-col justify-evenly max-w-sm items-center p-4 border mx-3 bg-white rounded-2xl h-72 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg shadow hover:cursor-pointer">
+      <div>{img}</div>
+      <div className="mt-4 text-xl font-bold">
+        <h1>{name}</h1>
       </div>
-      <motion.div className="flex-1 flex items-center justify-center">
-        <motion.h1
-          whileHover={{
-            color: "#FF7F11",
-          }}
-          className="text-4xl font-bold gap-3 mt-4 "
-        >
-          {name}
-        </motion.h1>
-      </motion.div>
-    </motion.div>
+      <div className="mt-2 text-sm text-gray-500">
+        <h1>{description}</h1>
+      </div>
+    </div>
   );
   return (
     <div ref={ref} className="bg-secondary ">
@@ -160,15 +156,12 @@ export default function HomePage() {
               initial="hidden"
               animate="show"
               variants={headerVariants}
-              // whileHover={{
-              //   textShadow: "0px 0px 8px #FF7F11",
-              // }}
               className="flex flex-col items-center gap-4 "
             >
               <h1 className="text-4xl font-bold text-white ">
                 Digital Marketing
               </h1>
-              <p className="gap-3 text-white ">
+              <p className="gap-3 text-white text-2xl ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -199,7 +192,7 @@ export default function HomePage() {
         <div className="flex flex-col justify-center items-center h-screen">
           <div>
             <LampContainer>
-              <h1 className="text-4xl font-bold text-white">About US </h1>
+              <h1 className="text-4xl font-bold text-white">About Us </h1>
               <div className="flex w-1/2 items-center p-3">
                 <p className="text-white text-xl">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -213,14 +206,14 @@ export default function HomePage() {
             </LampContainer>
           </div>
         </div>
-        <div className="h-screen ">
+        <div className="flex flex-col  items-center h-screen justify-center  ">
           <Reveal>
-            <div className="flex  flex-col justify-center items-center">
-              <h1 className="text-2xl font-bold text-white">Our Services</h1>
-              <h2 className="text-4xl font-bold my-10 text-white">
-                Choose your package
-              </h2>
-              <div className="flex justify-start items-center m-6 gap-3 h-full w-full p-4 overflow-hidden">
+            <div className="flex flex-col justify-center items-center w-full ">
+              <h1 className="text-4xl font-bold text-white">Our Services</h1>
+              <div
+                className="flex justify-center items-center m-6 gap-3 h-1/2 w-full  overflow-hidden "
+                style={{ height: 600 }}
+              >
                 {packages.map((item, index) => (
                   <ServicePack
                     name={item.name}
@@ -249,121 +242,117 @@ export default function HomePage() {
             </div>
           </Reveal>
         </div>
-        <div className=" p-6 rounded-md shadow-md h-screen">
-          <Reveal>
-            <>
-              <h2 className="text-2xl font-bold mb-5 text-center text-white">
-                Contact Us
-              </h2>
-              <form>
-                <div className="mb-4">
-                  <label
-                    className="block text-white text-sm font-bold mb-2"
-                    htmlFor="name"
-                  >
-                    Name:
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    className="block text-white text-sm font-bold mb-2"
-                    htmlFor="email"
-                  >
-                    Email:
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    className="block text-white text-sm font-bold mb-2"
-                    htmlFor="phone"
-                  >
-                    Phone Number:
-                  </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit"
-                    value="Submit"
-                  />
-                </div>
-              </form>
-            </>
-          </Reveal>
+        <div className="flex justify-center p-6 rounded-md shadow-md h-screen w-full">
+          <div className=" w-1/2">
+            <h2 className="text-2xl font-bold mb-5 text-center text-white">
+              Contact Us
+            </h2>
+            <form>
+              <div className="mb-4">
+                <label
+                  className="block text-white text-sm font-bold mb-2"
+                  htmlFor="name"
+                >
+                  Name:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-white text-sm font-bold mb-2"
+                  htmlFor="email"
+                >
+                  Email:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <label
+                  className="block text-white text-sm font-bold mb-2"
+                  htmlFor="phone"
+                >
+                  Phone Number:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  className="bg-primary w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:cursor-pointer"
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
+            </form>
+          </div>
         </div>
         <footer className="flex flex-col justify-center items-end p-4 text-white ">
-          <Reveal>
-            <>
-              <div className="container mx-auto flex flex-wrap justify-between items-center">
-                <div>
-                  <h1 className="font-bold text-2xl mb-2 ">Company Name</h1>
-                  <p>1234 Street Name</p>
-                  <p>City, State, Zip</p>
-                </div>
-                <div>
-                  <h2 className="font-bold text-xl mb-2">Links</h2>
-                  <ul>
-                    <li>
-                      <a href="#">Home</a>
-                    </li>
-                    <li>
-                      <a href="#">About</a>
-                    </li>
-                    <li>
-                      <a href="#">Services</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h2 className="font-bold text-xl mb-2">Follow Us</h2>
-                  <ul>
-                    <li>
-                      <a href="#">Facebook</a>
-                    </li>
-                    <li>
-                      <a href="#">Twitter</a>
-                    </li>
-                    <li>
-                      <a href="#">Instagram</a>
-                    </li>
-                    <li>
-                      <a href="#">LinkedIn</a>
-                    </li>
-                  </ul>
-                </div>
+          <>
+            <div className="container mx-auto flex flex-wrap justify-between items-center">
+              <div>
+                <h1 className="font-bold text-2xl mb-2 ">Company Name</h1>
+                <p>1234 Street Name</p>
+                <p>City, State, Zip</p>
               </div>
-              <div className="w-full flex justify-center my-4">
-                <p>
-                  &copy; {new Date().getFullYear()} Company Name. All rights
-                  reserved.
-                </p>
+              <div>
+                <h2 className="font-bold text-xl mb-2">Links</h2>
+                <ul>
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">About</a>
+                  </li>
+                  <li>
+                    <a href="#">Services</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
               </div>
-            </>
-          </Reveal>
+              <div>
+                <h2 className="font-bold text-xl mb-2">Follow Us</h2>
+                <ul>
+                  <li>
+                    <a href="#">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#">Twitter</a>
+                  </li>
+                  <li>
+                    <a href="#">Instagram</a>
+                  </li>
+                  <li>
+                    <a href="#">LinkedIn</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="w-full flex justify-center my-4">
+              <p>
+                &copy; {new Date().getFullYear()} Company Name. All rights
+                reserved.
+              </p>
+            </div>
+          </>
         </footer>
       </div>
     </div>
