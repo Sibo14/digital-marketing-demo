@@ -3,7 +3,7 @@ import HomePage from "./homePage/page";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-secondary">
       <Navbar />
       <HomePage />
     </div>

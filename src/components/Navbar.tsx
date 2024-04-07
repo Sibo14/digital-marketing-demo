@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-secondary ">
+      <nav className="bg-secondary mb-4 ">
         <div className="flex justify-between items-center p-6 h-5">
           <div className="text-2xl font-bold text-white">Digital Marketing</div>
           <button onClick={toggleMenu} className="md:hidden">
