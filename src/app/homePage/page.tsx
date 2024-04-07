@@ -149,8 +149,8 @@ export default function HomePage() {
   return (
     <div ref={ref} className="bg-secondary ">
       <div>
-        <div className="flex flex-col sm:flex-row justify-evenly items-center h-screen ">
-          <div className="w-full sm:w-1/3 h-full flex flex-col justify-center items-center gap-4 ">
+        <div className="flex flex-col md:flex-row justify-evenly items-center h-screen ">
+          <div className="w-full md:w-1/3 h-full flex flex-col justify-center items-center gap-4 ">
             <motion.div
               initial="hidden"
               animate="show"
