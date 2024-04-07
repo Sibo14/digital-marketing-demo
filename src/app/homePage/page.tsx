@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../../components/ui/Button";
 import { LampContainer } from "@/components/ui/lamp";
 import { motion, useAnimation, useInView, useScroll } from "framer-motion";
 import Lottie from "lottie-react";
