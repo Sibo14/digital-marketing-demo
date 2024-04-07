@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView, useScroll } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface RevealProps {
   children: JSX.Element;
