@@ -62,6 +62,29 @@ export default function HomePage() {
     },
   ];
 
+  const pricing: Pricing[] = [
+    {
+      name: "Package 1",
+      price: 100,
+      features: ["feature 1", "feature 2", "feature 3"],
+    },
+    {
+      name: "Package 2",
+      price: 150,
+      features: ["feature 1", "feature 2", "feature 3"],
+    },
+    {
+      name: "Package 3",
+      price: 250,
+      features: ["feature 1", "feature 2", "feature 3"],
+    },
+    {
+      name: "Package 4",
+      price: 400,
+      features: ["feature 1", "feature 2", "feature 3"],
+    },
+  ];
+
   const headerVariants = {
     hidden: { y: "100vh" }, // Start from the bottom of the screen
     show: {
@@ -159,29 +182,6 @@ export default function HomePage() {
       </div>
     </div>
   );
-
-  const pricing: Pricing[] = [
-    {
-      name: "Package 1",
-      price: 100,
-      features: ["feature 1", "feature 2", "feature 3"],
-    },
-    {
-      name: "Package 2",
-      price: 150,
-      features: ["feature 1", "feature 2", "feature 3"],
-    },
-    {
-      name: "Package 3",
-      price: 250,
-      features: ["feature 1", "feature 2", "feature 3"],
-    },
-    {
-      name: "Package 1",
-      price: 400,
-      features: ["feature 1", "feature 2", "feature 3"],
-    },
-  ];
 
   const PricingPlan = ({
     name,
@@ -327,7 +327,10 @@ export default function HomePage() {
             </div>
           </Reveal>
         </div>
-        <div className="flex flex-col justify-evenly items-center h-screen overflow-hidden ">
+        <div
+          className="flex flex-col justify-evenly items-center h-screen overflow-hidden "
+          id="testimonials"
+        >
           <Reveal>
             <h1 className="text-2xl md:text-4xl font-bold text-white">
               Testimonials

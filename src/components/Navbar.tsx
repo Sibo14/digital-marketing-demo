@@ -41,6 +41,13 @@ const Navbar = () => {
           </button>
           <div className="hidden md:flex justify-center space-x-4 hover:cursor-pointer">
             <Link
+              to="about"
+              smooth={true}
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
+            >
+              About
+            </Link>
+            <Link
               to="services"
               smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
@@ -55,12 +62,13 @@ const Navbar = () => {
               Pricing
             </Link>
             <Link
-              to="about"
+              to="testimonials"
               smooth={true}
-              className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
             >
-              About
+              Testimonials
             </Link>
+
             <Link
               to="contact"
               smooth={true}
@@ -73,6 +81,13 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden flex flex-col space-y-4 p-6">
             <Link
+              to="about"
+              smooth={true}
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
+            >
+              About
+            </Link>
+            <Link
               to="services"
               smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
@@ -86,13 +101,15 @@ const Navbar = () => {
             >
               Pricing
             </Link>
+
             <Link
-              to="about"
+              to="testimonials"
               smooth={true}
-              className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
             >
-              About
+              Testimonials
             </Link>
+
             <Link
               to="contact"
               smooth={true}
