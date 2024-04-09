@@ -136,7 +136,7 @@ export default function HomePage() {
   }, [isInView, mainControls]);
 
   const ServicePack = ({ name, description, img }: Package) => (
-    <div className="flex flex-col justify-evenly max-w-sm items-center p-4 border mx-3 bg-white rounded-2xl h-72 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg shadow hover:cursor-pointer">
+    <div className="flex flex-col justify-evenly max-w-sm items-center p-4 border mx-3 bg-white rounded-2xl h-72 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-lg shadow hover:cursor-pointer my-3">
       <div>{img}</div>
       <div className="mt-4 text-xl font-bold">
         <h1>{name}</h1>
@@ -147,7 +147,7 @@ export default function HomePage() {
     </div>
   );
   return (
-    <div ref={ref} className="bg-secondary ">
+    <div ref={ref}>
       <div>
         <div className="flex flex-col md:flex-row justify-evenly items-center h-screen ">
           <div className="w-full md:w-1/3 h-full flex flex-col justify-center items-center gap-4 ">
@@ -193,7 +193,7 @@ export default function HomePage() {
           </motion.div>
         </div>
         <div
-          className="flex flex-col justify-center items-center h-screen"
+          className="flex flex-col justify-center items-center h-screen "
           id="about"
         >
           <div>
@@ -215,16 +215,16 @@ export default function HomePage() {
           </div>
         </div>
         <div
-          className="flex flex-col  items-center h-screen justify-center "
+          className="flex flex-col  items-center h-200 justify-center md:h-screen"
           id="services"
         >
           <Reveal>
-            <div className="flex flex-col justify-center items-center w-full  ">
+            <div className="flex flex-col justify-center items-center w-full h-full  ">
               <h1 className="text-2xl md:text-4xl font-bold text-white">
                 Our Services
               </h1>
               <div
-                className="flex flex-col md:flex-row justify-start items-center gap-3 md:w-full py-2 overflow-auto "
+                className="flex-1 md:flex flex-col md:flex-row justify-start items-center gap-3 md:w-full py-2  "
                 style={{ height: 600 }}
               >
                 {packages.map((item, index) => (
