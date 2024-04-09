@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,47 +39,53 @@ const Navbar = () => {
               )}
             </svg>
           </button>
-          <div className="hidden md:flex justify-center space-x-4">
-            <a
-              href="#"
-              className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
+          <div className="hidden md:flex justify-center space-x-4 hover:cursor-pointer">
+            <Link
+              to="services"
+              smooth={true}
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
             >
-              Pricing
-            </a>
-            <a
-              href="#"
+              Services
+            </Link>
+            <Link
+              to="about"
+              smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="contact"
+              smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
         {isOpen && (
           <div className="md:hidden flex flex-col space-y-4 p-6">
-            <a
-              href="#"
+            <Link
+              to="services"
+              smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
+              Services
+            </Link>
+            <Link
+              to="about"
+              smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="contact"
+              smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         )}
       </nav>

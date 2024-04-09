@@ -192,7 +192,10 @@ export default function HomePage() {
             <Lottie animationData={animationData} />
           </motion.div>
         </div>
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div
+          className="flex flex-col justify-center items-center h-screen"
+          id="about"
+        >
           <div>
             <LampContainer>
               <h1 className="text-2xl font-bold text-white md:text-4xl">
@@ -211,7 +214,10 @@ export default function HomePage() {
             </LampContainer>
           </div>
         </div>
-        <div className="flex flex-col  items-center h-screen justify-center  ">
+        <div
+          className="flex flex-col  items-center h-screen justify-center "
+          id="services"
+        >
           <Reveal>
             <div className="flex flex-col justify-center items-center w-full  ">
               <h1 className="text-2xl md:text-4xl font-bold text-white">
@@ -251,7 +257,10 @@ export default function HomePage() {
             </div>
           </Reveal>
         </div>
-        <div className="flex justify-center p-6 rounded-md shadow-md h-screen w-full">
+        <div
+          className="flex justify-center p-6 rounded-md shadow-md h-screen w-full"
+          id="contact"
+        >
           <div className="w-full md:w-1/2">
             <h2 className="text-2xl font-bold mb-5 text-center text-white">
               Contact Us
