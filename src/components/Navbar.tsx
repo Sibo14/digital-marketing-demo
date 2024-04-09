@@ -48,6 +48,13 @@ const Navbar = () => {
               Services
             </Link>
             <Link
+              to="pricing"
+              smooth={true}
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
+            >
+              Pricing
+            </Link>
+            <Link
               to="about"
               smooth={true}
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
@@ -71,6 +78,13 @@ const Navbar = () => {
               className="text-white hover:bg-white rounded-lg p-2 hover:text-black"
             >
               Services
+            </Link>
+            <Link
+              to="pricing"
+              smooth={true}
+              className="text-white hover:bg-white rounded-lg p-2 hover:text-black "
+            >
+              Pricing
             </Link>
             <Link
               to="about"
