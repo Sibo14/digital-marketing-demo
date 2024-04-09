@@ -261,7 +261,7 @@ export default function HomePage() {
           className="flex justify-center p-6 rounded-md shadow-md h-screen w-full"
           id="contact"
         >
-          <div className="w-full md:w-1/2">
+          <div className="flex flex-col w-full md:w-1/2 justify-evenly">
             <h2 className="text-2xl font-bold mb-5 text-center text-white">
               Contact Us
             </h2>
@@ -308,6 +308,21 @@ export default function HomePage() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-white text-sm font-bold mb-2"
+                  htmlFor="note"
+                >
+                  Note:
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  id="note"
+                  name="note"
                   required
                 />
               </div>
