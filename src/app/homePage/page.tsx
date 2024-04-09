@@ -224,7 +224,7 @@ export default function HomePage() {
                 Our Services
               </h1>
               <div
-                className="flex-1 md:flex flex-col md:flex-row justify-start items-center gap-3 md:w-full py-2  "
+                className="flex-1 md:flex flex-col md:flex-row justify-start items-center gap-3 md:w-full py-2 px-2 md:px-0  "
                 style={{ height: 600 }}
               >
                 {packages.map((item, index) => (
